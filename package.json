@@ -1,0 +1,14 @@
+{
+  "name": "myblog",
+  "version": "1.0.0",
+  "description": "A blog for learning Node, Express, and SQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt West",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
