@@ -1,10 +1,11 @@
-const http = require("http");
+const express = require("express");
+const app = express();
 const port = 3000;
 
-http
-  .createServer(function(req, res) {
-    res.writeHead(200, { "Content-Type": "text/html" });
-    res.write(`req.url: ${req.url}`);
-    res.end("Hello World!");
-  })
-  .listen(3000, console.log(`Listening on port ${port}`));
+app.use(express.static(__dirname + "/public"));
+
+app.get("/home", (req, res) => res.sendFile(__dirname + "/public/home.html"));
+
+app.get("/", (req, res) => res.send("Hello Express!"));
+
+app.listen(port, () => console.log(`listening on port ${port}.`));
